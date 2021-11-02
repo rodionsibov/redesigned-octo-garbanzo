@@ -3,16 +3,29 @@ import axios from 'axios'
 
 export default createStore({
   state: {
-    userData: {}
+    userData: {},
+    products: [],
+    product: {},
+    cart: []
   },
   mutations: {
     setUserData(state, val) {
       state.userData = val
-    }
+    },
+    
   },
   getters: {
     user(state) {
       return state.userData
+    },
+    products(state) {
+      return state.products
+    },
+    product(state) {
+      return state.product
+    },
+    cart(state) {
+      return state.cart
     }
   },
   actions: {
