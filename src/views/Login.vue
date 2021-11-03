@@ -1,12 +1,11 @@
 <template>
-  <div>
-    <div class="container" style="padding-top: 10%">
+    <div class="container" style="margin: 150px auto">
       <div class="row d-flex justify-content-center">
-        <div class="col-5 text-left login-form-container">
+        <div class="text-left login-form-container">
           <div class="d-flex justify-content-center">
             <img
               src="https://cdn0.iconfinder.com/data/icons/set-ui-app-android/32/8-512.png"
-              width="150"
+              width="100"
               alt=""
             />
           </div>
@@ -52,14 +51,16 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
+
 <script>
 import { mapActions } from "vuex";
+
 export default {
   name: "Login",
   methods: {
-    ...mapActions("account", ["login"]),
+    ...mapActions(['login']),
   },
 };
 </script>
+

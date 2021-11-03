@@ -1,14 +1,12 @@
 <template>
-  <div class="container-fluid">
+  <div class="container" style="margin: 100px auto">
     <div class="row d-flex justify-content-center">
       <div class="col-6">
-        <div class="card text-left shadow-md">
-          <img class="card-img-top" :src="product.imageUrl" alt />
-        </div>
+        <img class="img-fluid" :src="product.imageUrl" alt />
       </div>
-      <div class="col-6 text-left text-justify">
-        <div class="display-3">{{ product.name }}</div>
-        <p class="lead text-justify">{{ product.content }}</p>
+      <div class="col-6">
+        <div class="display-3 mb-3">{{ product.name }}</div>
+        <p class="">{{ product.content }}</p>
         <div>
           <p class="h3">Price</p>
           <p class="h2">${{ product.price }}</p>
@@ -21,7 +19,7 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
-import AddToCart from '@/components/AddToCart.vue';
+import AddToCart from "@/components/AddToCart.vue";
 
 export default {
   data() {
@@ -30,29 +28,15 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(['user']),
-    ...mapGetters(['product']),
+    ...mapGetters(["user"]),
+    ...mapGetters(["product"]),
   },
   components: { AddToCart },
   methods: {
-    ...mapActions(['productDetails']),
+    ...mapActions(["productDetails"]),
   },
   mounted() {
     this.productDetails(this.$route.params.idProduct);
   },
 };
 </script>
-
-<style>
-.container-fluid {
-  padding: 30px;
-}
-
-.image-product {
-  width: 100%;
-}
-
-.card * {
-  max-height: 85vh;
-}
-</style>
