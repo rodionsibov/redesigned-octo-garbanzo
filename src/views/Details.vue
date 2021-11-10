@@ -1,10 +1,10 @@
 <template>
   <div class="container" style="margin: 100px auto">
     <div class="row d-flex justify-content-center">
-      <div class="col-6">
+      <div class="col-md-6">
         <img class="img-fluid" :src="product.imageUrl" alt />
       </div>
-      <div class="col-6">
+      <div class="col-md-6">
         <div class="display-3 mb-3">{{ product.name }}</div>
         <p class="">{{ product.content }}</p>
         <div>
